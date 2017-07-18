@@ -1,8 +1,11 @@
 base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 test2017package
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+bookdown
+knitr

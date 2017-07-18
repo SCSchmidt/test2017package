@@ -13,7 +13,3 @@ new_function <- function(x){
   return(z)
 
 }
-
-numb_er <- function(x){
-  glue(x, -er)
-  }
