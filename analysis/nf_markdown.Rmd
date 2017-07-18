@@ -1,13 +1,15 @@
 ---
 title: "This is a Markdown just for fun"
 author: me
-output: html_document
+output: bookdown::html_document2
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
-                      warning = FALSE)
+                      warning = FALSE,
+                      tab.width = 7,
+                      fig.align = "center") # chunk option for all of the document)
 ```
 
 ```{r, echo=FALSE}
@@ -32,7 +34,8 @@ new_function(anlaeg$fra_aar) -> kya
 If I now have done this great stuff, I can see, whether we can see this in our Table \@ref(tab:tableso).
 I don't really know, why this ref is not working. But at least the warning messages are gone.
 
-```{r tableso , echo=FALSE}
-knitr::kable(kya, caption = "Wow, look at this!")
+```{r tableso, echo=FALSE}
+knitr::kable(kya, caption = "Wow\\! look at this\\!",
+             )
 ```
 
