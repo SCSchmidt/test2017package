@@ -1,0 +1,35 @@
+---
+title: "This is a Markdown just for fun"
+author: me
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+library(test2017package)
+library(tidyverse)
+library(bookdown)
+library(knitr)
+```
+
+
+## What am I doing here?
+I am just trying around and creating stuff.
+
+```{r try, echo=TRUE, cache=TRUE}
+anlaeg <- read.csv("../data/anlaeg_all_25832.csv") 
+  anlaeg<-anlaeg[1:10,]
+new_function(anlaeg$fra_aar) -> kya
+```
+
+## Including Tables
+
+If I now have done this great stuff, I can see, whether we can see this in our Table \@ref(tab:table).
+
+```{r table, echo=FALSE}
+knitr::kable(kya, caption = "Wow, look at this!")
+```
+
