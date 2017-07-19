@@ -56,6 +56,7 @@ knitr::kable(table,
 ```
 
 
+
 Let's add a plot
 ```{r, thisplot, fig.cap="This is a wonderful plot, isn't it" }
 dependson='try2'
