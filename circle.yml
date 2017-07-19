@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    -docker info
+    -docker build -t scschmidt/test2017package .
+
+test:
+  override
+    - docker run --name test2017package -d -p 8787:8787 scschmidt/test2017package
+
+deployment:
+  hub:
+    branch: master
+    commands:
+     - docker login -e SDOCKER_EMAIL -u SDOCKER_USER -p SDOCKER_PASS
+     - docker push scschmidt/test2017package

@@ -1,5 +1,5 @@
 #get the base image, this one has R, Rstudio and pandoc
-FROM rocker/verse:3.3.4
+FROM rocker/verse:3.4.1
 
 MAINTAINER Sophie
 
