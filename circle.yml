@@ -4,8 +4,8 @@ machine:
 
 dependencies:
   override:
-    -docker info
-    -docker build -t scschmidt/test2017package .
+    - docker info
+    - docker build -t scschmidt/test2017package .
 
 test:
   override
