@@ -15,5 +15,5 @@ deployment:
   hub:
     branch: master
     commands:
-     - docker login -e SDOCKER_EMAIL -u SDOCKER_USER -p SDOCKER_PASS
+     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
      - docker push scschmidt/test2017package
