@@ -2,13 +2,13 @@
 title: "This is a Markdown just for fun"
 author: me
 output: bookdown::html_document2
+bibliography: new_bib.bib
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
                       warning = FALSE,
-                      tab.width = 7,
                       fig.align = "center") # chunk option for all of the document)
 ```
 
@@ -17,25 +17,50 @@ library(test2017package)
 library(tidyverse)
 library(bookdown)
 library(knitr)
+library(ggplot2)
 ```
 
+I need to cite this guy [@zimmermann2009estimations].
+
+Also I need to cite this Fahrig - guy [-@fahrig1973nachweis]
+
+# Trials
 
 ## What am I doing here?
 I am just trying around and creating stuff.
 
 ```{r try, echo=TRUE, cache=TRUE}
 anlaeg <- read.csv("../data/anlaeg_all_25832.csv") 
-  anlaeg<-anlaeg[1:10,]
-new_function(anlaeg$fra_aar) -> kya
+  anlaeg2<-anlaeg[1:10,]
 ```
 
-## Including Tables
+This data (above) is going to the cache. But now we continue calculating and create something like a table consisting senselessly transformed data.
 
-If I now have done this great stuff, I can see, whether we can see this in our Table \@ref(tab:tableso).
-I don't really know, why this ref is not working. But at least the warning messages are gone.
+```{r, maketable, echo=TRUE, cache=FALSE}
+dependson='try'
+new_function(anlaeg2$fra_aar) -> kya
+another_function(kya) -> percent
+table <- cbind.data.frame(kya,percent)
+```
 
-```{r tableso, echo=FALSE}
-knitr::kable(kya, caption = "Wow\\! look at this\\!",
-             )
+
+If I now have done this great stuff, I can see, whether we can see this in our Table \@ref(tab:try2) and in the beautiful plot as created in figure \@ref(fig:thisplot).
+
+Yeah?
+
+
+```{r, try2, echo=FALSE}
+dependson='maketable'
+knitr::kable(table, 
+             caption = "try this")
+```
+
+
+Let's add a plot
+```{r, thisplot, fig.cap="This is a wonderful plot, isn't it" }
+dependson='try2'
+ggplot(table, aes(x=kya,y=percent))+
+  geom_point()
+
 ```
 
