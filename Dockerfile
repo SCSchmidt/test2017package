@@ -2,6 +2,7 @@
 FROM rocker/verse:3.3.4
 
 MAINTAINER Sophie
+
 COPY . /test2017package
 
 RUN . /etc/environment \
