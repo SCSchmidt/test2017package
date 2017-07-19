@@ -7,6 +7,6 @@ COPY . /test2017package
 
 RUN . /etc/environment \
 
-&& R -e "devtools::install('/test2017package', dep=TRUE)" \
+&& R --vanilla "devtools::install('/test2017package', dep=TRUE)" \
 
-&& R -e "rmarkdown::render('test2017package/analysis/nf_markdown.Rmd')"
+&& R --vanilla "rmarkdown::render('test2017package/analysis/nf_markdown.Rmd')"
