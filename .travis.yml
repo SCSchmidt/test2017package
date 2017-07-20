@@ -7,4 +7,6 @@ cache: packages
 repos:
   MRAN:"https://mran.microsoft.com/snapshot/2017-07-20"
 # das ist sozusagen die checkpoint wir nehmen diese versionen der packages bitte - version
+script: Rscript -e "options(repos='$MRAN')"
+
 warnings_are_errors: false
