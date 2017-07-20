@@ -20,6 +20,7 @@ library(knitr)
 library(ggplot2)
 ```
 
+
 I need to cite this guy [@zimmermann2009estimations].
 
 Also I need to cite this Fahrig - guy [-@fahrig1973nachweis]
@@ -63,5 +64,12 @@ dependson='try2'
 ggplot(table, aes(x=kya,y=percent))+
   geom_point()
 
+```
+
+
+```{r}
+library(binford)
+data(LRB)
+knitr::kable(head(LRB))
 ```
 
