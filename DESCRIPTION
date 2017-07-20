@@ -9,7 +9,6 @@ Description: This compendium contains code and data for the ... url ... , ...
     doi-angabe immer gut für die version, mit der die publikation erstellt wurde
 License: MIT + file LICENSE
 Encoding: UTF-8
-Imports: test2017package
 LazyData: true
 Suggests: testthat
 RoxygenNote: 6.0.1
