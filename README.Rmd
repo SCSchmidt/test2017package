@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 [![Travis-CI Build Status](https://travis-ci.org/SCSchmidt/test2017package.svg?branch=master)](https://travis-ci.org/SCSchmidt/test2017package)
 
-The goal of test2017package is to try around.
+The goal of test2017package is to try around. And this changing stuff is interesting.
 
 ## Installation
 
